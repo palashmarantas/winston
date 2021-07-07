@@ -2,7 +2,9 @@
 framework: mocha
 blacklist:
   - "test/exception-handler.test.js"
+  - "test/log-exception.test.js"
   - "test/rejection-handler.test.js"
+  - "test/tail-file.test.js"
 postmerge:
   pattern:
     - "./test/**/*.test.js"
