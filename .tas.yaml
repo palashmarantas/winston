@@ -1,13 +1,11 @@
 ---
 framework: mocha
 blacklist:
-  - "test/exception-handler.test.js"
-  - "test/log-exception.test.js"
-  - "test/rejection-handler.test.js"
-  - "test/tail-file.test.js"
+  - "test/log-exception.test.js##Logger, ExceptionHandler##.exceptions.unhandle()##handlers immutable"
+  - "test/log-exception.test.js##Logger, ExceptionHandler##Custom exitOnError function does not exit"
 postmerge:
   pattern:
-    - "./test/**/*.test.js"
+    - "./test/log-exception.test.js"
   strategy:
     threshold: <5|100s|30m|6h>
     type: <commit|time>
@@ -17,7 +15,7 @@ modifiers:
   - type: jest
     cli: "--forbid-pending --no-bail"
 premerge:
-  - "./test/**/*.test.js"
+  - "./test/log-exception.test.js"
 prerun:
   - npm ci
 postrun:
