@@ -1,21 +1,15 @@
 ---
 framework: mocha
 blacklist:
-  - "test/log-exception.test.js##Logger, ExceptionHandler##.exceptions.unhandle()##handlers immutable"
-  - "test/log-exception.test.js##Logger, ExceptionHandler##Custom exitOnError function does not exit"
+  - test/rejection-handler.test.js##UnhandledRejectionHandler##.handle()
 postmerge:
   pattern:
-    - "./test/log-exception.test.js"
+    - "./test/**/*.test.js"
   strategy:
     threshold: <5|100s|30m|6h>
     type: <commit|time>
-modifiers:
-  - type: mocha
-    config: cnf/mocha.ini
-  - type: jest
-    cli: "--forbid-pending --no-bail"
 premerge:
-  - "./test/log-exception.test.js"
+  - "./test/**/*.test.js"
 prerun:
   - npm ci
 postrun:
@@ -23,4 +17,5 @@ postrun:
   - echo "Ba Dum TAS... -_-"
 stability:
   consecutive_runs: 5
+configFile: ".tas.mocharc.json"
 version: 2.0
