@@ -11,10 +11,10 @@ preMerge:
     - "./test/**/*.test.js"
 preRun:
   - npm ci
-  - populist lib/*.js lib/winston/*.js lib/winston/**/*.js
 postRun:
   - node --version
   - echo "Ba Dum TAS... -_-"
 stability:
   consecutive_runs: 5
+configFile: .mocharc.json
 version: 2.0
