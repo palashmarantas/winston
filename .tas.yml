@@ -1,4 +1,6 @@
 ---
+blacklist:
+  - 'test/log-exception.test.js##Logger, ExceptionHandler##Custom exitOnError function does not exit##'
 framework: mocha
 postMerge:
   pattern:
