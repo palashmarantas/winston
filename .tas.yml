@@ -15,6 +15,6 @@ postRun:
   - echo "Ba Dum TAS... -_-"
 stability:
   consecutive_runs: 5
-configFile: .mocharc.json
+
 version: 2.2
 
