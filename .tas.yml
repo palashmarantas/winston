@@ -16,5 +16,5 @@ postRun:
 stability:
   consecutive_runs: 5
 configFile: .mocharc.json
-version: 2.1
+version: 2.2
 
